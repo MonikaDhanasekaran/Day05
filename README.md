@@ -1,14 +1,18 @@
 1.Do the below programs in anonymous functions &  IIFE
 
 a. Print odd numbers in an array
+
 //Anonymous Function:                     
+
 var odd = function(b){
     if (b%2!=0){
       return "Odd";
     }
 }
 console.log(odd(17));
+
 //IIFE Function:
+
 (function odd(a){
     var a = 11;
     if(a%2!=0){
@@ -21,14 +25,18 @@ console.log(odd(17));
 ();
 
 b.Convert all the strings to title caps in a string array:
+
 //Anonymous Function:
+
 var titlecaps = function(str) {
     return str.toLowerCase().split(' ').map(function (word) {
     return (word.charAt(0).toUpperCase() + word.slice(1));
 }).join(' ');
 }
 console.log(titlecaps("guvi geek"));
+
 //IIFE Function:
+
 (function titleCase(st) {
     var st = "guvi geek"
     var t = st.split(" ").reduce( (s, c) => s +""+(c.charAt(0).toUpperCase() + c.slice(1) +" "), '');
@@ -37,7 +45,9 @@ console.log(titlecaps("guvi geek"));
 ()
 
 c.Sum of all numbers in an array:
+
 //Anonymous Function:
+
 var sumofnumbers=function(arr,sum){
     var arr = [2,3,4,5,6];
     var sum = 0;
@@ -47,7 +57,9 @@ var sumofnumbers=function(arr,sum){
     console.log(sum);
 }
 sumofnumbers();
+
 //IIFE Function:
+
 (function sumofnumbers(arr,sum){
       var arr = [2,3,4,5,6];
       var sum = 0;
@@ -59,10 +71,43 @@ sumofnumbers();
 ();
 
 d.Return all the prime numbers in an array:
+
 //Anonymous Function:
+
+var prime=function(num){
+   var num = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+   num = num.filter((number) => {
+   for (var i = 2; i <= Math.sqrt(number); i++) {
+       if (number % i === 0){
+          return false;
+       }
+   }
+   return true;
+   });
+   console.log(num);
+}
+prime();
+
 //IIFE Function:
+
+(function prime(num){
+    var num = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+    num = num.filter((number) => {
+    for (var i = 2; i <= Math.sqrt(number); i++) {
+        if (number % i === 0){
+            return false;
+        }
+    }
+    return true;
+    });
+console.log(num);
+})
+();
+
 e.Return all the palindromes in an array:
+
 //Anonymous Function:
+
 var palindrome=function(str,len,mid) {
   var str=["oppo"];
   var len=str.length;
@@ -75,7 +120,9 @@ var palindrome=function(str,len,mid) {
   console.log("Palindrome");
  }
 palindrome();
+
 //IIFE Function:
+
 (function palindrome(str,len,mid) {
   var str=["oppo"];
   var len=str.length;
@@ -90,7 +137,9 @@ console.log("Palindrome");
 ();
 
 f.Return median of two sorted arrays of same size:
+
 //Anonymous Function:
+
 var sort=function(ar1, ar2, n){
     var i = 0; 
     var j = 0; 
@@ -137,7 +186,9 @@ else{
     console.log("Arrays of unequal size");
  }
 sort();
+
 //IIFE Function:
+
 (function sort(ar1, ar2, n){
     var i = 0; 
     var j = 0; 
@@ -185,7 +236,52 @@ else{
 }
 }) 
 ();
+
 g.Remove duplicates from an array:
+
 //Anonymous Function:
 
+var duplicate=function(char,uniquechar){  
+    var char = ['Apple','Banana','Apple','Orange','Banana','Strawberry'];
+    var uniquechar = [...new Set(char)];
+    console.log(uniquechar);
+}
+duplicate();
+
 //IIFE Function:
+
+(function duplicate(char,uniquechar){  
+    var char = ['Apple','Banana','Apple','Orange','Banana','Strawberry'];
+    var uniquechar = [...new Set(char)];
+    console.log(uniquechar);
+})
+();
+
+h.Rotate an array by k times:
+
+//Anonymous Function:
+
+var rotatearray = function(nums, k) {
+    var nums = [1,2,3,4,5];
+    var k = 3; 
+    for (let i = 0; i < k; i++) {
+      nums.unshift(nums.pop());
+    }
+console.log(nums);
+}
+rotatearray();
+
+//IIFE Function:
+
+(function rotatearray(nums, k) {
+    var nums = [1,2,3,4,5];
+    var k = 3; 
+    for (let i = 0; i < k; i++) {
+      nums.unshift(nums.pop());
+    }
+console.log(nums);
+})
+();
+
+2.Do the below programs in arrow functions:
+
